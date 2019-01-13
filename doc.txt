@@ -1,8 +1,3 @@
-most 
-common 
-words 
-ability
-able
 about
 above
 accept
@@ -1003,4 +998,4 @@ yourself
 English Courses
 Privacy Policy
 Cookies
-Copyright 
+Copyright

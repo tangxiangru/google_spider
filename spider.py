@@ -2,12 +2,12 @@ import json
 import os
 import sys
 from google import google
-
+from random import randint
 
 def crawl(word, num_page=10):
 
     # 从google获取数据
-    search_results = google.search("Hello", num_page)
+    search_results = google.search(word, num_page)
     result = []
 
     # 将query的每个结果加入到result，分别获取title, description, url
@@ -30,14 +30,15 @@ def crawl(word, num_page=10):
 
 
 result=[]
-with open('doc.txt','r') as f:
-    for line in f:
-        result.append(list(line.strip('\n').split(',')))
-
+with open('doc.txt','rb') as f:
+    result = [x.decode('utf8').strip() for x in f.readlines()]
 word_set = []
 # 待查询的query
 word_set = result
+print(result)
+count = 0
 for word in word_set:
     print('begin {}'.format(word))
-    crawl(word)
+    crawl(str(word))
+
     print('end {}'.format(word))
